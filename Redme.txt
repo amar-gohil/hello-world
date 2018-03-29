@@ -1,0 +1,27 @@
+ 
+
+
+						FOR CREATE BASIC TOKEN   (Basic bXktdHJ1c3RlZC1jbGllbnQ6c2VjcmV0 )
+							Authorization
+	 						BASIC AUTH  
+
+							Input   Username = my-trusted-client  (withClient)
+									Password = secret (secret)
+							Output  Basic bXktdHJ1c3RlZC1jbGllbnQ6c2VjcmV0
+
+
+POST CaLL == http://localhost:8080/oauth/token
+
+header 
+	Authorization = Basic bXktdHJ1c3RlZC1jbGllbnQ6c2VjcmV0
+	Content-Type  = application/x-www-form-urlencoded
+body (x-www-form-urlencoded)
+	username = bill
+	password = abc123
+	grant_type = password
+	client_id = my-trusted-client (withClient)	
+
+
+GET == http://localhost:8080/user/test
+header 
+	Authorization = bearer 7fb66fb2-7d6d-4358-9e5a-563751c0f910
