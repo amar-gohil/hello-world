@@ -21,7 +21,7 @@ public class SimpleCorsFilter implements Filter{
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stubjhkhjk
 		
 	}
 
