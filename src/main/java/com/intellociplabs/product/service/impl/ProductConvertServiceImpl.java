@@ -44,7 +44,7 @@ public class ProductConvertServiceImpl implements ProductConvertService{
 	
 	@Override
 	public ArrayList<ProductVO> convertProductDomainListToVOList(Iterable<Product> productList) throws Exception{		
-		ArrayList<ProductVO> prosuctVOList = new ArrayList<ProductVO>();
+		ArrayList<ProductVO> productVOList = new ArrayList<ProductVO>();
 		for (Product product : productList) {
 			ProductVO productVO = new ProductVO();
 			productVO.setId(product.getId());
@@ -57,9 +57,9 @@ public class ProductConvertServiceImpl implements ProductConvertService{
 			productVO.setInvStatus(product.getInvStatus());
 			productVO.setSynonyms(product.getSynonyms());
 			productVO.setIsActive(product.getIsActive());
-			prosuctVOList.add(productVO);
+			productVOList.add(productVO);
         }
-		return prosuctVOList;
+		return productVOList;
 	}
 	
 	@Override

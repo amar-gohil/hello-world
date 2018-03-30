@@ -29,12 +29,12 @@ public class ProductController {
 	private ProductService productService;
 	
 	@RequestMapping(value = ADD_PRODUCT, method = RequestMethod.POST)
-    public ResponseVO<ProductVO> addProduct(@RequestBody ProductVO locationVO) throws Exception {
+    public ResponseVO<ProductVO> addProduct(@RequestBody ProductVO productVO) throws Exception {
     	ResponseVO<ProductVO> responseVO = new ResponseVO<ProductVO>();
-    	locationVO = productService.addProduct(locationVO);
+    	productVO = productService.addProduct(productVO);
     	responseVO.setStatusCode(ResponseStatus.A200.name());
     	responseVO.setStatusDescription(ResponseStatus.A200.getResponseDescription());
-    	responseVO.setValueObject(locationVO);
+    	responseVO.setValueObject(productVO);
         return responseVO;
     }
 	

@@ -1,18 +1,16 @@
 package com.intellociplabs.product.service.impl;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.intellociplabs.common.domain.Product;
+import com.intellociplabs.common.util.CommonUtil;
 import com.intellociplabs.common.vo.ProductVO;
 import com.intellociplabs.product.repository.ProductRepository;
 import com.intellociplabs.product.service.ProductConvertService;
 import com.intellociplabs.product.service.ProductService;
-import com.intellociplabs.common.util.CommonUtil;
-import com.intellociplabs.common.vo.ResponseVO;
 
 @Service
 public class ProductServiceImpl implements ProductService{
