@@ -6,6 +6,7 @@ import static com.intellociplabs.product.controller.ProductUrl.REMOVE_PRODUCT;
 import static com.intellociplabs.product.controller.ProductUrl.GET_ALL_PRODUCT;
 import static com.intellociplabs.product.controller.ProductUrl.GET_PRODUCT_BY_ID;
 import static com.intellociplabs.product.controller.ProductUrl.UPDATE_PRODUCT;
+import static com.intellociplabs.product.controller.ProductUrl.GET_PRODUCT_BY_API_ID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -49,6 +50,7 @@ public class ProductController {
 		return responseVO;
     }
 	
+	
 	@RequestMapping(value = REMOVE_PRODUCT, method = RequestMethod.POST)
 	public ResponseVO<ProductVO> removeProduct(@RequestBody RequestVO<String> requestVO) throws Exception {
 		productService.removeProduct(requestVO.getValueObject());
@@ -76,5 +78,14 @@ public class ProductController {
         return responseVO;
     }
 	
+	@RequestMapping(value = GET_PRODUCT_BY_API_ID, method = RequestMethod.POST)
+    public ResponseVO<ProductVO> getProductByApiId(@RequestBody RequestVO<String> requestVO) throws Exception {    	
+		ResponseVO<ProductVO> responseVO = new ResponseVO<ProductVO>();    
+		responseVO.setData(productService.getProductByApiId(requestVO.getValueObject()));
+    	responseVO.setStatusCode(ResponseStatus.A200.name());
+    	responseVO.setStatusDescription(ResponseStatus.A200.getResponseDescription()); 
+    	responseVO.setTotalRecords(responseVO.getData().size());
+		return responseVO;
+    }
 	
 }

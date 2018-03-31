@@ -59,4 +59,11 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 
+	@Override
+	public ArrayList<ProductVO> getProductByApiId(String apiId) throws Exception {
+		Iterable<Product> productList = productRepository.getProductByApiId(apiId);
+		return productConvertService.convertProductDomainListToVOList(productList);
+	}
+
+
 }

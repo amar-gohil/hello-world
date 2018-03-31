@@ -1,10 +1,8 @@
 package com.intellociplabs.product.service;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import com.intellociplabs.common.vo.ProductVO;
-import com.intellociplabs.common.vo.ResponseVO;
 
 public interface ProductService {
 
@@ -17,5 +15,7 @@ public interface ProductService {
 		ProductVO updateProduct(ProductVO productVO) throws Exception;		
 		
 		void removeProduct(String productId) throws Exception;
-	
+		
+		ArrayList<ProductVO> getProductByApiId(String apiId) throws Exception;
+		
 }

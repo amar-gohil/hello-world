@@ -20,4 +20,7 @@ public interface ProductRepository extends CrudRepository<Product, String>{
 	
 	@Query(" from Product where isActive=1  ORDER BY name ASC")
 	Iterable<Product> findAll();
+	
+	@Query(" from Product where isActive=1 and apiId=:apiId  ORDER BY name ASC")
+	Iterable<Product>  getProductByApiId(@Param("apiId") String apiId);
 }

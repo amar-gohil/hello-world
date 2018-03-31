@@ -8,5 +8,6 @@ public interface ProductUrl {
 	String GET_PRODUCT_BY_ID = "/productById";	
 	String UPDATE_PRODUCT = "/update";	
 	String REMOVE_PRODUCT = "/remove";
+	String GET_PRODUCT_BY_API_ID = "/getProductByApiId";
 
 }
